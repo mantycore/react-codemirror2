@@ -513,8 +513,7 @@ export class Controlled extends React.Component<IControlledCodeMirror, any> {
 
     this.shared = new Shared(this.editor, this.props);
 
-    this.mirror = (cm as any)(() => {
-    });
+    this.mirror = cm(document.createElement('div')); //TODO: ask maintainer if this is correct
 
     this.editor.on('electricInput', () => {
       this.mirror.setHistory(this.editor.getHistory());

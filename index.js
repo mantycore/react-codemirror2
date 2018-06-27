@@ -400,7 +400,7 @@ var Controlled = function(_super) {
     }
     this.editor = cm(this.ref);
     this.shared = new Shared(this.editor, this.props);
-    this.mirror = cm(function() {});
+    this.mirror = cm(document.createElement('div'));
     this.editor.on('electricInput', function() {
       _this.mirror.setHistory(_this.editor.getHistory());
     });
